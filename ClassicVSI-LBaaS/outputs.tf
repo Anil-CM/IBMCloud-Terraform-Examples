@@ -13,3 +13,7 @@ output lbaas_hostname {
 output health_monitors {
   value = module.lbaas.health_monitors
 }
+ 
+output workspace_id {
+  value = module.lbaas.schematics_workspace_id
+}
