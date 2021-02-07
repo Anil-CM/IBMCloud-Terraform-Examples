@@ -7,5 +7,5 @@ output health_monitors {
 }
 
 output "schematics_workspace_id" {
-    value = [for x in split(",", chomp(data.local_file.env_info.content)): split(":", x)[1] if contains(split(":", x), "Schematics")][0]
+    value = [for x in split(",", chomp(module.shell_execute.stdout)): split(":", x)[1] if contains(split(":", x), "Schematics")][0]
 }
